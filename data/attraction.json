@@ -1,0 +1,90 @@
+[
+  {
+    "id": "a1",
+    "title": "Munnar Tea Gardens",
+    "city": "Munnar",
+    "lat": 10.0892,
+    "lng": 77.0595,
+    "image": "assets/images/munnar.jpg",
+    "description": "Vast tea plantations with scenic landscapes and cool climate.",
+    "rating": 4.8,
+    "category": "Nature"
+  },
+  {
+    "id": "a2",
+    "title": "Alleppey Backwaters",
+    "city": "Alleppey",
+    "lat": 9.4981,
+    "lng": 76.3388,
+    "image": "assets/images/alleppey.jpg",
+    "description": "Famous network of canals, lagoons, and lakes with houseboat cruises.",
+    "rating": 4.7,
+    "category": "Nature"
+  },
+  {
+    "id": "a3",
+    "title": "Fort Kochi",
+    "city": "Kochi",
+    "lat": 9.9667,
+    "lng": 76.2412,
+    "image": "assets/images/fortkochi.jpg",
+    "description": "Historic town known for colonial architecture and vibrant culture.",
+    "rating": 4.6,
+    "category": "Heritage"
+  },
+  {
+    "id": "a4",
+    "title": "Varkala Beach",
+    "city": "Varkala",
+    "lat": 8.7333,
+    "lng": 76.7167,
+    "image": "assets/images/varkala.jpg",
+    "description": "Cliffside beach famous for sunsets, cliffs, and cliff-top cafes.",
+    "rating": 4.7,
+    "category": "Beach"
+  },
+  {
+    "id": "a5",
+    "title": "Athirappilly Waterfalls",
+    "city": "Thrissur",
+    "lat": 10.2828,
+    "lng": 76.5912,
+    "image": "assets/images/athirappilly.jpg",
+    "description": "Spectacular waterfall known as the ‘Niagara of India’.",
+    "rating": 4.9,
+    "category": "Nature"
+  },
+  {
+    "id": "a6",
+    "title": "Periyar Wildlife Sanctuary",
+    "city": "Thekkady",
+    "lat": 9.5980,
+    "lng": 77.1900,
+    "image": "assets/images/periyar.jpg",
+    "description": "Famous wildlife sanctuary with elephants, tigers, and boat rides.",
+    "rating": 4.8,
+    "category": "Wildlife"
+  },
+  {
+    "id": "a7",
+    "title": "Padmanabhaswamy Temple",
+    "city": "Thiruvananthapuram",
+    "lat": 8.4893,
+    "lng": 76.9471,
+    "image": "assets/images/padmanabhaswamy.jpg",
+    "description": "Ancient temple dedicated to Lord Vishnu with stunning architecture.",
+    "rating": 4.7,
+    "category": "Heritage"
+  },
+  {
+    "id": "a8",
+    "title": "Bekal Fort",
+    "city": "Bekal",
+    "lat": 12.3600,
+    "lng": 75.0200,
+    "image": "assets/images/bekal.jpg",
+    "description": "Historic seaside fort with a scenic beach and watchtowers.",
+    "rating": 4.6,
+    "category": "Heritage"
+  }
+]

@@ -1,0 +1,489 @@
+/* ----------------------
+   :root variables
+---------------------- */
+:root {
+  --olive-600: #6B8E23;
+  --olive-500: #8AA34C;
+  --olive-400: #B7C88A;
+  --bg-color: #f2f6f0;
+  --shell-bg: rgba(255, 255, 255, 0.90);
+  --text-color: #243023;
+}
+
+/* ----------------------
+   General Reset & Body
+---------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  background: var(--bg-color); /* just solid color now */
+  color: var(--text-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+
+/* ----------------------
+   Header
+---------------------- */
+header {
+  display: flex;
+  align-items: center; /* vertical centering */
+  justify-content: space-between;
+  padding: 0.75rem 1.25rem;
+  height: 70px; /* fix header height */
+  background: rgba(255,255,255,0.8);
+  backdrop-filter: blur(6px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+
+/* Brand (logo + text) */
+.site-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.1rem;
+}
+
+.logo {
+  width: 120px;
+  height: 120px;
+  display: block;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0; /* remove extra margin */
+  padding: 0;
+}
+
+.brand-text .site-title {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--olive-600);
+  line-height: 1;
+  margin: 0; /* ensure no extra margin */
+}
+
+.brand-text .site-slogan {
+  display: block;
+  font-size: 0.75rem;
+  color: rgba(36,48,35,0.8);
+  margin: 0;      /* remove top margin to make it closer */
+  font-weight: 500;
+}
+
+/* Navigation */
+header nav {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+header nav a {
+  color: rgba(36, 48, 35, 0.95);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+header nav a:hover {
+  background: rgba(107, 142, 35, 0.08);
+}
+
+/* ----------------------
+   Content Shell
+---------------------- */
+.content-shell {
+  width: 94%;
+  max-width: 1200px;
+  margin: 100px auto 3rem; /* leaves space for sticky header */
+  background: var(--shell-bg);
+  border-radius: 14px;
+  padding: 1.25rem;
+  box-shadow: 0 10px 30px rgba(18, 30, 18, 0.06);
+  position: relative;
+  z-index: 10;
+  transition: box-shadow 180ms ease, transform 180ms ease;
+}
+
+.content-shell:hover {
+  box-shadow: 0 18px 36px rgba(18, 30, 18, 0.08);
+}
+
+/* ----------------------
+   Search Section
+---------------------- */
+#search-section {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  background: #edf2f7;
+  border-bottom: 1px solid #ccc;
+}
+
+#searchInput {
+  width: 60%;
+  max-width: 500px;
+  padding: 0.7rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.2s;
+}
+
+#searchInput:focus {
+  border-color: #2b6cb0;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.3);
+}
+
+/* ----------------------
+   Attraction / Favorites Lists
+---------------------- */
+#attraction-list, #favorites-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem 0;
+}
+
+.attraction-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(250,250,250,0.96));
+  border-radius: 12px;
+  padding-bottom: 1rem;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 6px 16px rgba(20, 40, 20, 0.04);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.attraction-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.attraction-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+.attraction-card h3 {
+  margin: 0.7rem 0 0.3rem;
+  color: var(--olive-600);
+}
+
+.attraction-card p {
+  margin: 0.2rem 0;
+  font-size: 0.95rem;
+}
+
+.attraction-card a,
+.attraction-card button {
+  display: inline-block;
+  margin-top: 0.5rem;
+  background: var(--olive-600);
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.attraction-card a:hover,
+.attraction-card button:hover {
+  background: var(--olive-500);
+}
+
+.remove-fav {
+  background: #e53e3e;
+}
+
+.remove-fav:hover {
+  background: #c53030;
+}
+
+/* ----------------------
+   Maps
+---------------------- */
+#map, #favorites-map, #attraction-map {
+  border-radius: 12px;
+  width: 90%;
+  max-width: 1000px;
+  height: 420px;
+  margin: 1rem auto 2rem;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* ----------------------
+   Attraction Details Page
+---------------------- */
+#attraction-details {
+  width: 90%;
+  max-width: 1000px;
+  margin: 2rem auto;
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 6px 18px rgba(20, 40, 80, 0.06);
+}
+
+.detail-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-top: 0.8rem;
+}
+
+.detail-image {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid #e6eef8;
+  box-shadow: 0 6px 14px rgba(10,20,40,0.04);
+}
+
+.detail-meta p {
+  margin: 0.6rem 0;
+  color: #333;
+}
+
+#favoriteBtn, #directionsBtn {
+  display: inline-block;
+  margin-right: 0.6rem;
+  margin-top: 0.6rem;
+  padding: 0.5rem 0.9rem;
+  border-radius: 8px;
+  border: none;
+  background: var(--olive-600);
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.15s, transform 0.08s;
+}
+
+#favoriteBtn:hover, #directionsBtn:hover {
+  background: var(--olive-500);
+  transform: translateY(-1px);
+}
+
+/* ----------------------
+   Responsive
+---------------------- */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .logo {
+    width: 36px;
+    height: 36px;
+  }
+
+  .brand-text .site-title {
+    font-size: 1rem;
+  }
+
+  nav {
+    margin-top: 0.5rem;
+  }
+
+  .content-shell {
+    margin-top: 120px; /* ensure space for sticky header */
+    padding: 0.9rem;
+  }
+
+  #searchInput {
+    width: 90%;
+  }
+
+  .detail-row {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-image {
+    height: 220px;
+  }
+
+  .attraction-card img {
+    height: 150px;
+  }
+
+  #map, #favorites-map {
+    height: 300px;
+  }
+}
+
+
+/* overlay */
+.login-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(2,6,23,0.45);
+  z-index: 9999;
+  padding: 20px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 180ms ease, visibility 180ms ease;
+}
+
+/* visible state */
+.login-overlay.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* modal box */
+.login-box {
+  width: 380px;
+  max-width: calc(100% - 40px);
+  background: #fff;
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 12px 36px rgba(2,6,23,0.20);
+  position: relative;
+  transform: translateY(6px);
+  transition: transform 160ms ease, opacity 160ms ease;
+}
+
+/* header inside modal */
+.login-box h2 {
+  margin: 0 0 8px;
+  color: var(--olive-600);
+  font-size: 1.125rem;
+}
+
+/* labels / inputs */
+.login-box label {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: rgba(36,48,35,0.9);
+}
+.login-box input[type="email"],
+.login-box input[type="password"],
+.login-box input[type="text"] {
+  width: 100%;
+  padding: 10px 12px;
+  margin-top: 6px;
+  border-radius: 8px;
+  border: 1px solid #e6e9ef;
+  outline: none;
+  font-size: 0.95rem;
+}
+.login-box input:focus {
+  border-color: var(--olive-600);
+  box-shadow: 0 0 0 4px rgba(139,162,76,0.08);
+}
+
+/* actions row */
+.login-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+}
+.login-actions button {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  background: var(--olive-600);
+  color: #fff;
+  font-weight: 700;
+  transition: transform 120ms ease, background 120ms;
+}
+.login-actions button:hover { transform: translateY(-2px); background: var(--olive-500); }
+
+/* ghost button style */
+button.ghost {
+  background: transparent;
+  border: 1px solid #e6e9ef;
+  color: var(--olive-600);
+  font-weight: 600;
+}
+
+/* close button (top-right) */
+.close-login {
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  border: 0;
+  background: transparent;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  color: rgba(36,48,35,0.7);
+}
+
+/* small helper text / message */
+.small.muted {
+  margin-top: 10px;
+  font-size: 0.885rem;
+  color: rgba(36,48,35,0.62);
+}
+
+/* status text */
+.error { color: #e53e3e; font-size: 0.92rem; margin-top: 8px; }
+.success { color: #16a34a; font-size: 0.92rem; margin-top: 8px; }
+
+/* header auth controls */
+#loginToggle,
+#logoutBtn {
+  background: transparent;
+  border: 1px solid rgba(36,48,35,0.06);
+  padding: 0.35rem 0.6rem;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+}
+#loginToggle:hover,
+#logoutBtn:hover {
+  background: rgba(107,142,35,0.06);
+}
+
+/* user badge */
+#userBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.25rem 0.45rem;
+  border-radius: 6px;
+  background: rgba(107,142,35,0.06);
+  color: var(--olive-600);
+  font-weight: 600;
+  margin-left: 6px;
+}
+
+/* keep header nav items aligned nicely on small screens */
+@media (max-width: 520px) {
+  .login-box { width: 96%; padding: 14px; }
+  header nav { flex-wrap: wrap; gap: 0.4rem; }
+  .logo { width: 36px; height: 36px; }
+}

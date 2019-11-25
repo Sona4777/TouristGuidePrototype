@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Attraction Details</title>
+    <link id="main-css" rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+</head>
+<body>
+    <header>
+        <div class="site-brand">
+            <img src="assets/images/logo.svg" alt="Tourist Guide Logo" class="logo">
+            <div class="brand-text">
+                <span class="site-title">TOURIST GUIDE</span>
+                <small class="site-slogan">#Your journey begins here</small>
+            </div>
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="favorites.html">Favorites</a>
+        </nav>
+    </header>
+    
+    <div class="content-shell">
+        <section id="attraction-details">
+            <h2 id="attraction-title"></h2>
+            <img id="attraction-image" src="" alt="" />
+            <p id="attraction-city"></p>
+            <p id="attraction-desc"></p>
+            <button id="favoriteBtn">Add to Favorites</button>
+            <button id="directionsBtn">Get Directions</button>
+        </section>
+
+
+        <section id="map"></section>
+    </div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/attraction.js"></script>
+</body>
+</html>

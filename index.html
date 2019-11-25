@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tourist Guide</title>
+    <link id="main-css" rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+</head>
+<body>
+    <header>
+        <div class="site-brand">
+            <img src="assets/images/logo.svg" alt="Tourist Guide Logo" class="logo">
+            <div class="brand-text">
+                <span class="site-title">TOURIST GUIDE</span>
+                <small class="site-slogan">#Your journey begins here</small>
+            </div>
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="favorites.html">Favorites</a>
+
+            <!-- AUTH CONTROLS (added) -->
+            <button id="loginToggle" type="button">Login</button>
+            <button id="logoutBtn" type="button" style="display:none;">Logout</button>
+            <span id="userBadge" style="display:none;">Hello, <strong id="userName">Traveler</strong></span>
+        </nav>
+    </header>
+
+    <div class="content-shell">
+        <section id="search-section">
+            <input type="text" id="searchInput" placeholder="Search attractions or city...">
+        </section>
+
+        <section id="attraction-list"></section>
+
+        <section id="map"></section>
+    </div>
+
+    <!-- Centered login modal (added) -->
+    <div id="loginOverlay" class="login-overlay" aria-hidden="true">
+      <div class="login-box" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
+        <button class="close-login" id="closeLogin" aria-label="Close login">×</button>
+        <h2 id="loginTitle">Sign in</h2>
+
+        <label for="lg-email">Email</label>
+        <input id="lg-email" type="email" placeholder="you@example.com" autocomplete="username">
+
+        <label for="lg-password">Password</label>
+        <input id="lg-password" type="password" placeholder="password" autocomplete="current-password">
+
+        <div class="login-actions">
+          <button id="signinBtn" type="button">Sign in</button>
+          <button id="goRegister" class="ghost" type="button">Register</button>
+        </div>
+
+        <div id="loginMessage" class="small muted">This is a fake login for demo purposes only.</div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/login.js"></script> <!-- new: fake auth logic -->
+    <script src="js/main.js"></script>  <!-- existing: uses TGAuth for UI wiring -->
+</body>
+</html>
